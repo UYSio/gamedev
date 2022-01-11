@@ -195,7 +195,7 @@ p {
 
   .box:hover {
     animation: out 1s ease forwards;
-    cursor: pointer;
+    // cursor: pointer;
   }
 }
 
@@ -212,3 +212,12 @@ p {
 .box1 {
   background: center / contain no-repeat url(https://juanuys.com/assets/games/a_night_at_locke_manor/thumb.png) !important;
 }
+
+.box2 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/games/perspectives/thumbsq.png) !important;
+}
+
+.box5 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/games/haxe-maze/thumb.png) !important;
+}
+
