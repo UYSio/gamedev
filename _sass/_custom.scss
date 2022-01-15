@@ -69,6 +69,7 @@ p {
   margin: 0;
   line-height: 1.5;
   
+  
   & + & {
     margin-top: 1em;
   }
@@ -250,4 +251,29 @@ a {
 }
 .tool4 {
   background: center / contain no-repeat url(/gamedev/assets/images/presskittie.png) !important;
+}
+
+@media (max-width: 1000px) {
+  p {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 560px) {
+  p {
+    background: inherit;
+  }
+  .bg-one {
+
+    &:before {
+      background: inherit;
+    }
+  }
+  .boxes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3%;
+    margin: 2em 0;
+    padding-bottom: 180px;
+  }
 }
