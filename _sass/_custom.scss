@@ -2,14 +2,14 @@ $colour1: #65b8db;
 $colour2: #f06439;
 
 :root {
-    
+
   --width: 100vw;
   --full-width: 100vw;
-  
+
   @media (min-width: 42em) {
     --width: 42rem;
   }
-  
+
   --angle: -2deg;
   /*-----------------
   Magic Number Alert:
@@ -25,14 +25,16 @@ $colour2: #f06439;
 }
 
 
-*, *:before, *:after {
-  box-sizing: border-box; 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 html {
   font-size: 100%;
   transition: font-size 0.2s linear;
-  
+
   @media (min-width: 70em) {
     font-size: 125%;
   }
@@ -46,7 +48,7 @@ body {
 
 h1 {
   text-align: center;
-  margin:0 auto 1em;
+  margin: 0 auto 1em;
   padding: 0 1em;
   max-width: 42rem;
   line-height: 1.2;
@@ -68,21 +70,21 @@ p {
   font-size: 1.25em;
   margin: 0;
   line-height: 1.5;
-  
-  
-  & + & {
+
+
+  &+& {
     margin-top: 1em;
   }
 
-  
-a {
+
+  a {
     color: inherit;
     text-decoration: none;
     background-image: linear-gradient(transparent 90%, 0, darken($colour1, 30%) 100%);
     padding: 0.125em 0;
     //display: inline-block;
     transition: opacity 0.3s ease-out;
-    
+
     &:hover {
       text-decoration: none;
       opacity: 0.8;
@@ -105,7 +107,7 @@ a {
   margin: 0 auto;
   padding: 1.5em;
   position: relative;
-  
+
   /* -----------
   enable the border to see, that the content
   perfectly fits into the section withou
@@ -118,7 +120,7 @@ a {
   position: relative;
   padding: var(--skew-padding) 0;
   margin-top: -1px;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -134,29 +136,32 @@ a {
 }
 
 .bg-one {
-    padding-top: 100px;
-    padding-bottom: 200px;
-    
-    color: #252525;
-    font-weight: bolder;
-    .content {
-        .intro {
-          font-family: 'road rage';
-          font-size: 5em;
-        }
-        .more_info {
-          margin-top: 2em;
-        }
+  padding-top: 100px;
+  padding-bottom: 200px;
+
+  color: #252525;
+  font-weight: bolder;
+
+  .content {
+    .intro {
+      font-family: 'road rage';
+      font-size: 5em;
     }
 
-    &:before {
-      // background-image: linear-gradient(45deg, #654ea3, #eaafc8);
-      background: right / contain no-repeat url(/gamedev/assets/images/juan.png) #f7f7f7;
+    .more_info {
+      margin-top: 2em;
     }
+  }
+
+  &:before {
+    // background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+    background: right / contain no-repeat url(/gamedev/assets/images/juan.png) #f7f7f7;
+  }
 }
 
 .bg-two {
   padding: 100px 0;
+
   &:before {
     background-image: linear-gradient(-135deg, lighten($colour1, 0%), lighten($colour1, 15%));
   }
@@ -164,6 +169,7 @@ a {
 
 .bg-three {
   padding: 100px 0;
+
   &:before {
     background-image: linear-gradient(-135deg, lighten($colour2, 0%), lighten($colour2, 15%));
   }
@@ -171,6 +177,7 @@ a {
 
 .bg-four {
   padding: 100px 0;
+
   &:before {
     background: none;
   }
@@ -182,26 +189,37 @@ a {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3%;
   margin: 2em 0;
-  
+
   --translation: 0;
-  
-  
+
+
   .box {
     width: 100%;
     height: 0;
     padding-bottom: 100%;
     border: 1px solid #fff;
     background: #fff3;
-    transform: translateY( var(--translation) );
+    transform: translateY(var(--translation));
     animation: in 1s ease forwards;
   }
 
   // the box divs are inside hyperlinks
   a {
-    &:nth-child(1) { --translation: calc(var(--skew-padding) * 1.5)}
-    &:nth-child(2) { --translation: calc(var(--skew-padding) * 1)}
-    &:nth-child(3) { --translation: calc(var(--skew-padding) * 0.5)}
-    &:nth-child(4) { --translation: calc(var(--skew-padding) * 0)}  
+    &:nth-child(1) {
+      --translation: calc(var(--skew-padding) * 1.5)
+    }
+
+    &:nth-child(2) {
+      --translation: calc(var(--skew-padding) * 1)
+    }
+
+    &:nth-child(3) {
+      --translation: calc(var(--skew-padding) * 0.5)
+    }
+
+    &:nth-child(4) {
+      --translation: calc(var(--skew-padding) * 0)
+    }
   }
 
   .box:hover {
@@ -211,13 +229,23 @@ a {
 }
 
 @keyframes in {
-  0% { transform: rotate(1.5deg) scale(1.05) translateY( var(--translation)); }
-  100% { transform: rotate(0deg) scale(1.0) translateY( var(--translation)); }
+  0% {
+    transform: rotate(1.5deg) scale(1.05) translateY(var(--translation));
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.0) translateY(var(--translation));
+  }
 }
 
 @keyframes out {
-  0% { transform: rotate(0deg) scale(1.0) translateY( var(--translation)); }
-  100% { transform: rotate(1.5deg) scale(1.05) translateY( var(--translation)); }
+  0% {
+    transform: rotate(0deg) scale(1.0) translateY(var(--translation));
+  }
+
+  100% {
+    transform: rotate(1.5deg) scale(1.05) translateY(var(--translation));
+  }
 }
 
 // games
@@ -225,32 +253,61 @@ a {
 .game1 {
   background: center / contain no-repeat url(https://juanuys.com/assets/games/a_night_at_locke_manor/thumb.png) !important;
 }
+
 .game2 {
   background: center / contain no-repeat url(https://juanuys.com/assets/games/perspectives/thumbsq.png) !important;
 }
+
 .game3 {
   background: center / contain no-repeat url(/gamedev/assets/images/pop_one.png) !important;
 }
+
 .game4 {
   background: center / contain no-repeat url(/gamedev/assets/images/cc.png) !important;
 }
+
 .game5 {
   background: center / contain no-repeat url(/gamedev/assets/images/colonisation.png) !important;
 }
 
-
+.game6 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/games/paddles/thumb.png) !important;
+}
 
 .tool1 {
   background: center / contain no-repeat url(https://juanuys.com/assets/games/haxe-maze/thumb.png) !important;
 }
+
 .tool2 {
   background: center / contain no-repeat url(/gamedev/assets/images/random_scamper.png) !important;
 }
+
 .tool3 {
   background: center / contain no-repeat url(/gamedev/assets/images/phrasegen.png) !important;
 }
+
 .tool4 {
   background: center / contain no-repeat url(/gamedev/assets/images/presskittie.png) !important;
+}
+
+.tool5 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/posts/2023-10-09-llm-inside-godot-game/thumb.png) !important;
+}
+
+.tool6 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/posts/2023-10-16-gamedev-friendly-webserver/thumb.png) !important;
+}
+
+.tool7 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/posts/2023-11-06-uberpath2d-for-godot/thumb512.png) !important;
+}
+
+.tool8 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/posts/2023-11-17-quicktexturebutton-for-godot/thumb.png) !important;
+}
+
+.tool9 {
+  background: center / contain no-repeat url(https://juanuys.com/assets/posts/2023-11-24-steam-revenue-calculator-firefox-extension/thumb.png) !important;
 }
 
 @media (max-width: 1000px) {
@@ -263,12 +320,14 @@ a {
   p {
     background: inherit;
   }
+
   .bg-one {
 
     &:before {
       background: inherit;
     }
   }
+
   .boxes {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
